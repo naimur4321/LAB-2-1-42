@@ -1,0 +1,49 @@
+// Employee class
+class Employee {
+    protected String name;
+    protected double salary;
+
+    // Constructor
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // toString method for Employee
+    @Override
+    public String toString() {
+        return "Employee Name: " + name + ", Salary: " + salary;
+    }
+}
+
+// Manager class that inherits from Employee
+class Manager extends Employee {
+    private String department;
+
+    // Constructor
+    public Manager(String name, double salary, String department) {
+        super(name, salary); // Call the parent class constructor
+        this.department = department;
+    }
+
+    // toString method for Manager
+    @Override
+    public String toString() {
+        return "Manager Name: " + name + ", Department: " + department;
+    }
+}
+
+// Test program
+public class TestEmployeeManager {
+    public static void main(String[] args) {
+        // Create an Employee object
+        Employee employee = new Employee("John Doe", 50000);
+
+        // Create a Manager object
+        Manager manager = new Manager("Jane Smith", 75000, "Sales");
+
+        // Test the toString methods
+        System.out.println(employee);
+        System.out.println(manager);
+    }
+}
